@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BookList from './components/BookList'; // Import your components
-import BookForm from './components/BookForm';
+import BookList from './components/BookList';
 import Navigation from './components/Navigation';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
           path="/"
           element={(
             <div>
-              {/* Define your home page content here */}
               <h2>Home Page</h2>
               <BookList />
             </div>
@@ -23,9 +21,8 @@ function App() {
           path="/categories"
           element={(
             <div>
-              {/* Define your categories page content here */}
-              <h2>Categories Page</h2>
-              <BookForm />
+              <h2>Categories</h2>
+              <p>Under Construction</p>
             </div>
           )}
         />
