@@ -3,6 +3,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/booksSlice';
+import './YourComponent.css'; // Import the CSS file
 
 const YourComponent = () => {
   const dispatch = useDispatch();
@@ -18,16 +19,23 @@ const YourComponent = () => {
     dispatch(addBook(newBook));
   };
 
-  const handleRemoveBook = (bookId) => {
-    dispatch(removeBook(bookId));
+  const handleRemoveBook = () => {
+    // Replace 'item1' with the actual ID of the book you want to remove
+    dispatch(removeBook('item1'));
   };
 
   return (
-    <div>
-      {/* Your component content */}
-      <button type="button" onClick={handleAddBook}>Add Book</button>
-      <button type="button" onClick={() => handleRemoveBook('item1')}>Remove Book</button>
-      {/* Replace 'item1' with the actual ID of the book you want to remove */}
+    <div className="your-component-container">
+      <button type="button" onClick={handleAddBook} className="add-button">
+        Add Book
+      </button>
+      <button
+        type="button"
+        onClick={handleRemoveBook}
+        className="remove-button"
+      >
+        Remove Book
+      </button>
     </div>
   );
 };
