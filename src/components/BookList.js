@@ -1,21 +1,29 @@
-import React from 'react';
-import Book from './Book';
+// src/components/BookList.js
 
-function BookList() {
-  const books = [
-    { id: 1, title: 'Book 1', author: 'Author A' },
-    { id: 2, title: 'Book 2', author: 'Author B' },
-    // Add more books here
-  ];
+import React from 'react';
+import { useSelector } from 'react-redux';
+
+const BookList = () => {
+  const books = useSelector((state) => state.books);
 
   return (
     <div>
       <h2>Book List</h2>
-      {books.map((book) => (
-        <Book key={book.id} title={book.title} author={book.author} />
-      ))}
+      <ul>
+        {books.map((book) => (
+          <li key={book.item_id}>
+            {book.title}
+            <br />
+            {' '}
+            {/* Add a line break here */}
+            by
+            {' '}
+            {book.author}
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default BookList;
